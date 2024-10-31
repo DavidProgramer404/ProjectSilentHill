@@ -1,0 +1,341 @@
+/* Clase para aplicar la fuente SLNTHLN */
+@font-face {
+    font-family: 'SLNTHLN'; /* Nombre de la fuente */
+    src: url('..//fonts/SLNTHLE.TTF') format('truetype'); /* Ruta al archivo TTF */
+    font-weight: normal;
+    font-style: normal;
+}
+
+.body-font {
+    font-family: 'SLNTHLN', sans-serif; /* Usar la fuente que has definido */
+}
+body {
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+    margin: 0; /* Quitar márgenes del body */
+    overflow-y: auto; /* Permitir el desplazamiento vertical */
+    cursor: url('../images/cursor/SilentHillSword.cur'), auto;
+    font-weight: 400;
+    font-style: normal;
+    font-family: 'SLNTHLN', sans-serif; /* Usar la fuente que has definido */
+}
+
+
+a {
+    cursor: url('../images/cursor/SilentHillMask.cur'), pointer;
+}
+a.btnGaleria{
+    cursor: url('../images/cursor/SilentHillMask.cur'), pointer;
+}
+
+#background-video {
+    position: fixed; /* Fijar la posición del video */
+    top: 50%; /* Centrar verticalmente */
+    left: 50%; /* Centrar horizontalmente */
+    min-width: 100%; /* Asegurar que cubra el ancho */
+    min-height: 100%; /* Asegurar que cubra la altura */
+    width: auto; /* Mantener la relación de aspecto */
+    height: auto; /* Mantener la relación de aspecto */
+    z-index: -1; /* Colocar el video detrás del contenido */
+    transform: translate(-50%, -50%); /* Ajustar el video al centro */
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header {
+    background: url('images/header-background.jpg') no-repeat center center/cover;
+    padding: 60px 0;
+    color: white;
+}
+
+h1 {
+    text-shadow: 10px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+h1:hover{
+    color: #4e4e4e;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+    
+}
+p:hover{
+    color: #000000;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+    text-shadow: #1a1a1a;
+    /* bold */
+    font-weight: bold;
+}
+section {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 10px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+footer {
+    background-color: #1a1a1a;
+    padding: 20px;
+    color: #b0b0b0;
+}
+
+.btn-primary {
+    background-color: #1e90ff;
+    border: none;
+}
+
+.carousel-item img {
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro para los controles */
+    border-radius: 50%; /* Hacer los controles redondos */
+}
+
+/* Neblina */
+.fog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.081); /* Color blanco con transparencia */
+    pointer-events: none; /* Permitir que los clics pasen a los elementos de abajo */
+    backdrop-filter: blur(8px); /* Difumina el fondo */
+    animation: fogAnimation 5s linear infinite; /* Animación de neblina */
+}
+
+/* Animación de neblina */
+@keyframes fogAnimation {
+    0% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0.3;
+    }
+}
+
+/* Nubes */
+.clouds {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    pointer-events: none; /* Permitir que los clics pasen a los elementos de abajo */
+    background: url('images/clouds.png') repeat-x; /* Usa una imagen de nubes */
+    animation: cloudAnimation 30s linear infinite; /* Animación de movimiento de nubes */
+}
+
+/* Animación de nubes */
+@keyframes cloudAnimation {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 1000px 0; /* Ajusta el número según la imagen de nubes */
+    }
+}
+
+/* Ceniza */
+.ash {
+    position: fixed;
+    top: -10%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Permitir que los clics pasen a los elementos de abajo */
+    overflow: hidden;
+}
+
+.ash::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/ash.png') repeat; /* Usa una imagen de cenizas */
+    animation: ashAnimation 15s linear infinite; /* Animación de caída de cenizas */
+}
+
+/* Animación de ceniza cayendo */
+@keyframes ashAnimation {
+    0% {
+        transform: translateY(-10%);
+    }
+    100% {
+        transform: translateY(110%); /* Las cenizas caerán por toda la altura */
+    }
+}
+
+
+.button {
+    background-color: #333; /* Color oscuro */
+    color: #fff; /* Texto blanco */
+    border: 2px solid #666; /* Borde gris */
+    padding: 10px 20px; /* Espaciado interno */
+    font-family: 'Arial', sans-serif; /* Fuente simple */
+    font-size: 16px;
+    text-transform: uppercase; /* Texto en mayúsculas */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    transition: all 0.3s ease; /* Transición suave */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Sombra */
+}
+
+.button:hover {
+    background-color: #555; /* Color al pasar el ratón */
+    border-color: #888; /* Borde al pasar el ratón */
+    cursor: pointer;
+}
+
+.containerVer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.btnGaleria {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.btnGaleria:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+
+
+/* CARDS GALERY */
+.card-img-top {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho de la tarjeta */
+    height: 200px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Mantiene la proporción de aspecto de la imagen */
+    border-radius: 10px 10px 0 0; /* Redondear esquinas superiores de la tarjeta */
+}
+
+/* Asegurando que todas las tarjetas tengan el mismo tamaño */
+.card {
+    min-height: 350px; /* Altura mínima para la tarjeta */
+}
+
+/* Agregar estilo al cuerpo y al encabezado */
+body {
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+    font-family: 'Arial', sans-serif;
+    margin: 0; /* Quitar márgenes del body */
+}
+
+header {
+    background: url('images/header-background.jpg') no-repeat center center/cover;
+    padding: 60px 0;
+    color: white;
+}
+
+h1 {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+footer {
+    background-color: #1a1a1a;
+    padding: 20px;
+    color: #b0b0b0;
+}
+
+/* Estilos escalofriantes para el carousel */
+#scaryCarousel .carousel-inner {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* Sombra alrededor del carousel */
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden;
+}
+
+#scaryCarousel .carousel-img {
+    filter: grayscale(70%) brightness(50%); /* Tono oscuro con menos brillo */
+    transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out; /* Efecto de transición */
+}
+
+#scaryCarousel .carousel-item:hover .carousel-img {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+    filter: grayscale(50%) brightness(70%); /* Ilumina un poco al hacer hover */
+}
+
+#scaryCarousel .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro para los textos */
+    border-radius: 5px;
+    padding: 10px;
+    text-shadow: 2px 2px 8px black; /* Sombras en el texto */
+    font-family: 'Creepster', cursive; /* Fuente escalofriante (puedes importarla) */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%); /* Hace que los íconos de navegación sean blancos */
+}
+
+#scaryCarousel h5 {
+    font-size: 1.75rem;
+    color: #fff; /* Texto blanco */
+    text-transform: uppercase;
+}
+
+#scaryCarousel p {
+    color: #ddd;
+}
+
+
+/* CARD MARY */
+.card-mary {
+    background-image: url('../images/galery/cartaMary.png'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* La imagen cubre todo el fondo */
+    background-position: center; /* La imagen está centrada */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    border: none; /* Elimina el borde de la card si es necesario */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Añade sombra para que la tarjeta destaque */
+    color: white; /* Cambia el color del texto si lo necesitas */
+    padding: 20px;
+}
+
+.card-mary-body {
+    background-color: rgba(0, 0, 0, 0.186); /* Fondo oscuro semi-transparente para mejorar legibilidad del texto */
+    padding: 20px;
+    border-radius: 8px; /* Bordes redondeados */
+}
